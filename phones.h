@@ -7,4 +7,5 @@ typedef struct PHONE {
   link *people_list_beginning;
 } phone;
 
+
 #endif
