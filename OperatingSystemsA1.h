@@ -4,12 +4,14 @@
 #include "persons.h"
 #include "phones.h"
 
-void searchByName(char *last, char *first);
-void searchByNick(char *nick);
-void searchByNumber(char *number);
+void searchByName();
+void searchByNick();
+void searchByNumber();
 int loadUserData(char *fileName);
-int userIntaraction(void);
+int userInteraction(void);
 void menu(void);
+void userSearchMenu(void);
+void invalidEntry(int);
 
 
 #endif
