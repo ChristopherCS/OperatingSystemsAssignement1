@@ -65,7 +65,7 @@ void parseDataFile(FILE *dataFile){
 
 
 
-
+  free(buffCopy);
   free(logMessage);
 }
 
