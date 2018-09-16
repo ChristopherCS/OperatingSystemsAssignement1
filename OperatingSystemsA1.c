@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv){
   FILE *dataFP;
-  char *fileName = argv[0];
+  char *fileName = argv[1];
   int result = 1;
 
   initLogfile("Logfile Opened.");
@@ -34,15 +34,20 @@ void closeDataFile(FILE *fp){
 }
 
 void parseDataFile(FILE *dataFile){
-  char buffer[512];
-  const char delimA[10] = "</person>"; 
-  const char delimB[9] = "<person>";
+  char buffer[2048];
+  const char delimA[10] = "/"; 
+  const char delimB[9] = "\n";
   const char delimC[2] = ",";
   const char delimD[3] = "\n";
+  const char arrow = "<";
   size_t bytesRead;
-  char  *token;
-  char *logMessage = calloc(1024 * sizeof(char));
-  char *buffCopy = calloc(512*sizeof(char));
+  char  *tokenA;
+  char *tokenACounter;
+  char *subToken;
+  char *subTokenCounter;
+  char *logMessage = calloc(4096, sizeof(char));
+  char *buffCopy = calloc(2048, sizeof(char));
+  char *tokenACopy = calloc(64, sizeof(char));
 
   appendToLogfile("About to start Parsing File.");
   // While more bytes have been read from the file. (There is data in the buffer.)
@@ -52,8 +57,25 @@ void parseDataFile(FILE *dataFile){
     sprintf(logMessage, "Read %d bytes from data file.", bytesRead);
     appendToLogfile(logMessage);
     buffCopy = strdup(buffer);
-    sprintf(logMessage, "%s", buffCopy);
-    appendToLogfile(logMessage);
+
+    tokenA = strtok_r(buffCopy, delimA, &tokenACounter);
+    while(tokenA != NULL){
+      tokenACopy = strdup(tokenA);
+
+      subToken = strtok_r(tokenACopy, delimB, &subTokenCounter);
+
+        while(subToken != NULL){
+          if((strpbrk(subToken, arrow)) != NULL){
+            appendToLogfile("Found a \">\"");
+          }else{
+          appendToLogfile(subToken);
+        }
+          subToken = strtok_r(NULL, delimB, &subTokenCounter);
+        }
+
+      
+      tokenA = strtok_r(NULL, delimA, &tokenACounter);
+    }
   
     bytesRead = fread(buffer,sizeof(char), sizeof(buffer), dataFile);
   }
