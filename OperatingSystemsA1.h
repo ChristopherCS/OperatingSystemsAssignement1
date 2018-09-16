@@ -19,5 +19,7 @@ void invalidEntry(int);
 void initLogfile(char *message);
 FILE *openDataFile(char *fileName);
 void appendToLogfile(char *message);
+void parseDataFile(FILE *dataFile);
+void closeDataFile(FILE* fp);
 
 #endif

@@ -1,7 +1,7 @@
 #include "OperatingSystemsA1.h"
 
 
-#define LOG_FILE_NAME "A1.log"
+#define LOG_FILE_NAME "A1.log" // Yeah well, I need a global log file... So Shoot Me.
 
 int main(int argc, char **argv){
   FILE *dataFP;
@@ -10,7 +10,9 @@ int main(int argc, char **argv){
 
   initLogfile("Logfile Opened.");
   dataFP = openDataFile(fileName);
+  parseDataFile(dataFP);
 
+  closeDataFile(dataFP);
   result = userInteraction();
   appendToLogfile("Program Ending. Closing Log File Now. Goodbye.");
   return result;
@@ -24,6 +26,47 @@ FILE *openDataFile(char *fileName){
   fp = fopen(fileName, "r");
   free(logString);
   return(fp);
+}
+
+void closeDataFile(FILE *fp){
+  appendToLogfile("Closing Data File.");
+  fclose(fp);
+}
+
+void parseDataFile(FILE *dataFile){
+  char buffer[512];
+  const char delimA[10] = "</person>"; 
+  const char delimB[9] = "<person>";
+  const char delimC[2] = ",";
+  const char delimD[3] = "\n";
+  size_t bytesRead;
+  char  *token;
+  char *logMessage = calloc(1024 * sizeof(char));
+  char *buffCopy = calloc(512*sizeof(char));
+
+  appendToLogfile("About to start Parsing File.");
+  // While more bytes have been read from the file. (There is data in the buffer.)
+  bytesRead = fread(buffer, sizeof(char), sizeof(buffer), dataFile);
+  
+  while(bytesRead >0){
+    sprintf(logMessage, "Read %d bytes from data file.", bytesRead);
+    appendToLogfile(logMessage);
+    buffCopy = strdup(buffer);
+    sprintf(logMessage, "%s", buffCopy);
+    appendToLogfile(logMessage);
+  
+    bytesRead = fread(buffer,sizeof(char), sizeof(buffer), dataFile);
+  }
+
+
+
+
+
+
+
+
+
+  free(logMessage);
 }
 
 
@@ -40,6 +83,8 @@ void initLogfile(char *message){
   fclose(logFile);
 }
 
+// This method of timestamping the Log File was inspired by the code located at
+// stack overflow here: https://stackoverflow.com/questions/7411301/how-to-introduce-date-and-time-in-log-file
 void appendToLogfile(char *message){
   FILE *logFile = fopen(LOG_FILE_NAME, "a");
   char timeStamp[20];
