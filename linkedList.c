@@ -1,7 +1,5 @@
 #include "linkedList.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 link *create_link(char *data, link *next){
 
@@ -27,4 +25,14 @@ void print_data(link *beginning){
     printf("%s\n", beginning->data);
     beginning = beginning->next;
   } 
+}
+
+void cleanUpLinks(link * l){
+  link *temp;
+
+  while(l->next != NULL){
+    temp = l->next;
+    free(l);
+    l = temp;
+  }
 }

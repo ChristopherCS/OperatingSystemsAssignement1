@@ -38,15 +38,11 @@ person *createPerson(char *names){
 }
 
 void addPhoneToPerson(char *phoneNumber, person *p){
-  link * l = p->phones;
   link *new = malloc(sizeof(link));
   new->data = phoneNumber;
-  new->next = NULL;
+  new->next = p->phones;
+  p->phones = new;
 
-  while(l->next !=NULL){
-    l = l->next;
-  }
-  l->next = new;
 }
 
 void printPerson(person *p){
@@ -70,4 +66,67 @@ void printPerson(person *p){
 
   free(printString);
   free(traverser);
+}
+
+person *searchNamesFirstLast(person **namesArray, int arraySize, char *first, char* last){
+  person * p = NULL;
+  person *ret = NULL;
+  int found = 0;
+  int i = 0;
+  for(i; i<arraySize && !found; i++){
+    p = namesArray[i];
+    if(compare(p->first, first)){
+      if(compare(p->last, last)){
+        ret = p;
+        found = 1;
+      }
+    }
+
+  }
+  return(ret);
+
+}
+
+person *searchNamesNick(person **namesArray, int arraySize, char *nick){
+  person *p = NULL;
+  person *ret = NULL;
+  int i = 0;
+  int found = 0;
+
+  for(i; i<arraySize && !found; i++){
+    p = namesArray[i];
+    if(compare(p->nick, nick)){
+      ret = p;
+      found = 1;
+    }
+  }
+
+  return(ret);
+}
+
+//Returns 1, match or 0, not match
+int compare(char *a, char *b){
+  int ret = 1; // a match
+  int sizea, sizeb, i=0;
+
+  sizea = sizeof(a);
+  sizeb = sizeof(b);
+  if(sizea = sizeb){
+    for(i; i<sizea; i++){
+      if(a[i] != b[i]) ret=0;
+    }
+  }else ret = 0; //not a match
+
+  return(ret);
+}
+
+void cleanUpPersons(person **namesArray, int arraySize){
+  int i = 0;
+  person *p;
+  for(i; i<arraySize; i++){
+    p = namesArray[i];
+    cleanUpLinks(p->phones);
+    free(p);
+  }
+  free(namesArray);
 }
