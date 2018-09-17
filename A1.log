@@ -1,4 +1,73 @@
-2018-09-16 23:19:13: Logfile Opened.
-2018-09-16 23:19:13: Opening Data File with Name: dataFile.html.
-2018-09-16 23:19:13: About to start Parsing File.
-2018-09-16 23:19:13: Read 1043 bytes from data file.
+2018-09-17 13:04:46: Logfile Opened.
+2018-09-17 13:04:46: Opening Data File with Name: dataFile.html.
+2018-09-17 13:04:46: About to start Parsing File.
+2018-09-17 13:04:46: Read 1043 bytes from data file.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Thornton, Steven, William, Billy.
+2018-09-17 13:04:46: Found a phone number in:   (999) 999-9999, Mobile, false.
+2018-09-17 13:04:46: Found a phone number in:   (313) 355-8394, Home, true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Brock,Paki,Flynn.
+2018-09-17 13:04:46: Found a phone number in:   (278) 938-2077,Mobile, true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Oneil,Darrel,Giacomo.
+2018-09-17 13:04:46: Found a phone number in:   (485) 565-1798,Home, true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>'.
+2018-09-17 13:04:46: Found a Name in:   Fuller,Blossom,Vielka.
+2018-09-17 13:04:46: Found a phone number in:   (384) 268-7417,Mobile,false.
+2018-09-17 13:04:46: Found a phone number in:   (319) 922-3587,Mobile,true.
+2018-09-17 13:04:46: Found a phone number in:   (952) 397-9958,Work,false.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Reeves,Oscar,Shay.
+2018-09-17 13:04:46: Found a phone number in:   (211) 968-0740,Mobile,true.
+2018-09-17 13:04:46: Found a phone number in:   (102) 760-8690,Work,false.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Mcclure,Camilla,Irene.
+2018-09-17 13:04:46: Found a phone number in:   (487) 207-1822,Home,true.
+2018-09-17 13:04:46: Found a phone number in:   (803) 698-8649,Work,false.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Roman,Giacomo,Amaya.
+2018-09-17 13:04:46: Found a phone number in:   (713) 190-0482,Work,true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Chandler,Oleg,Taylor.
+2018-09-17 13:04:46: Found a phone number in:   (643) 372-9164,Mobile,false.
+2018-09-17 13:04:46: Found a phone number in:   (993) 608-9050,Mobile,true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Macdonald,Nola,Aidan.
+2018-09-17 13:04:46: Found a phone number in:   (214) 651-8307,Home,true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Durham,Malcolm,Hector.
+2018-09-17 13:04:46: Found a phone number in:   (257) 164-8364,Mobile,false.
+2018-09-17 13:04:46: Found a phone number in:   (641) 769-7691,Home,true.
+2018-09-17 13:04:46: Found a phone number in:   (982) 218-5215,Home,false.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Discarded Line: <person>.
+2018-09-17 13:04:46: Found a Name in:   Espinoza,Chadwick,Zia.
+2018-09-17 13:04:46: Found a phone number in:   (390) 896-8859,Work,false.
+2018-09-17 13:04:46: Found a phone number in:   (582) 841-0437,Work,true.
+2018-09-17 13:04:46: Discarded Line: <.
+2018-09-17 13:04:46: Discarded Line: person>.
+2018-09-17 13:04:46: Found a Name in: ý.
+2018-09-17 13:04:46: Closing Data File.
+2018-09-17 13:04:46: Beginning User Interaction.
+2018-09-17 13:04:46: Printed the User Menu to Terminal.
+2018-09-17 13:04:47: Program Ending. Closing Log File Now. Goodbye.

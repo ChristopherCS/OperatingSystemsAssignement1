@@ -65,11 +65,29 @@ void parseDataFile(FILE *dataFile){
       subToken = strtok_r(tokenACopy, delimB, &subTokenCounter);
 
         while(subToken != NULL){
-          if((strpbrk(subToken, arrow)) != NULL){
-            appendToLogfile("Found a \">\"");
-          }else{
-          appendToLogfile(subToken);
-        }
+          switch(checkInputType(subToken)){
+            case 0: //a name
+           
+           
+            // sprintf(logMessage, "Found a Name in: %s.", subToken);
+            // appendToLogfile(logMessage);
+            break;
+            case 1: // an arrow (<person> or </person>)
+             
+             
+              // sprintf(logMessage, "Discarded Line: %s.", subToken);
+              // appendToLogfile(logMessage);
+            break;
+
+            case 2: // an open parenthesis, phone number
+              
+              
+              // sprintf(logMessage, "Found a phone number in: %s.", subToken);
+              // appendToLogfile(logMessage);
+            break;
+          }
+
+        
           subToken = strtok_r(NULL, delimB, &subTokenCounter);
         }
 
@@ -103,6 +121,29 @@ void initLogfile(char *message){
   fprintf(logFile, "%s: %s\n", timeStamp, message);
 
   fclose(logFile);
+}
+
+int checkInputType(char *inputLine){
+  char *logMessage = malloc(128*sizeof(char));
+  int ret = 0;
+  size_t length = strlen(inputLine);
+  int i = 0;
+  sprintf(logMessage, "Checking Input Type for String: %s.", inputLine);
+
+
+  for(i ; i<length; i++){
+    if(inputLine[i] == '>' || inputLine[i]=='<'){
+      ret = 1;
+     // appendToLogfile("Found an Arrow.");
+    }
+    if(inputLine[i] == '('){
+       ret = 2;
+      // appendToLogfile("Found an Open Parentheses.");
+    }
+  }
+
+  free(logMessage);
+  return(ret);
 }
 
 // This method of timestamping the Log File was inspired by the code located at

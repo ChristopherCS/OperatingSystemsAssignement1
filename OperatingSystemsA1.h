@@ -21,5 +21,6 @@ FILE *openDataFile(char *fileName);
 void appendToLogfile(char *message);
 void parseDataFile(FILE *dataFile);
 void closeDataFile(FILE* fp);
+int checkInputType(char *inputLine);
 
 #endif
