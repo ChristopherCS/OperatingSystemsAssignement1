@@ -75,10 +75,13 @@ int parseDataFile(FILE *dataFile, person **personsArray){
         while(subToken != NULL){
           switch(checkInputType(subToken)){
             case 0: //a name
+            sprintf(logMessage, "About to Try to Parse the Name: %s.", subToken);
+            appendToLogfile(logMessage);
             temp = createPerson(subToken);
+            appendToLogfile("Created Person. About to Print Person Data.");
+            printPerson(temp);
             personsArray[personsCount++] = temp;
-            // sprintf(logMessage, "Found a Name in: %s.", subToken);
-            // appendToLogfile(logMessage);
+            
             break;
             case 1: // an arrow (<person> or </person>)
              

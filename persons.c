@@ -7,33 +7,47 @@ person **createPersonsArray(void){
 
 person *createPerson(char *names){
   person *p = malloc(sizeof(person));
+  *p->first = malloc(25*sizeof(char));
+  *p->last = malloc(25*sizeof(char));
+  *p->middle = malloc(25*sizeof(char));
+  *p->nick = malloc(25*sizeof(char));
   link *l = NULL;
-  char *token = strtok(names, ",");
+  char *duplicate = calloc(1, 200);
+  char *savePtr;
+  char *token; 
   int i = 0;
+  printf("Here is the originial names passed: %s\n", names);
+  
+  strncpy(duplicate, names, 200);
+  printf("Here is the duplicate: %s\n", duplicate); 
 
+  token = strtok_r(duplicate, ",", &savePtr);
   for(i; i<4; i++){
     switch(i){
       case 0:
-        *p->last =  token;
-        token = strtok(NULL, ",");
+        printf("Last Name: %s\n", token);
+        strcpy(p->last, token);
+        token = strtok_r(NULL, ",", &savePtr);
         break;
       case 1:
-        *p->middle = token;
-        token = strtok(NULL, ",");
+        printf("Middle Name: %s\n", token);
+        strcpy(p->middle, token);
+        token = strtok_r(NULL, ",", &savePtr);
         break;
       case 2:
-        *p->first = token;
-        token = strtok(NULL, ",");
+        strcpy(p->first, token);
+        printf("First Name: %s\n", token);
+        token = strtok_r(NULL, ",", &savePtr);
         break;
       case 3:
-        *p->nick = token;
-        token = strtok(NULL, ",");
+        printf("Nick name: %s\n", token);
+        strcpy(p->nick, token);
+        token = strtok_r(NULL, ",", &savePtr);
         break;
     }
   }
-
+  free(duplicate);
   p->phones = l;
-
   return(p);
 }
 
@@ -59,7 +73,7 @@ void printPerson(person *p){
   sprintf(printString, "First Name: %s, Middle Name: %s, Last Name: %s\n", p->first, p->middle, p->last);
   printf(printString);
   traverser = p->phones;
-  for(i; i<=phones; i++){
+  for(i; i<=phones && traverser !=NULL; i++){
     printf("\tPhone: %s\n", traverser->data);
     traverser = traverser->next;
   }
@@ -126,6 +140,10 @@ void cleanUpPersons(person **namesArray, int arraySize){
   for(i; i<arraySize; i++){
     p = namesArray[i];
     cleanUpLinks(p->phones);
+    free(p->first);
+    free(p->last);
+    free(p->middle);
+    free(p->nick);
     free(p);
   }
   free(namesArray);

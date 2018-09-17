@@ -1,8 +1,26 @@
-2018-09-17 18:33:29: Logfile Opened.
-2018-09-17 18:33:29: Opening Data File with Name: dataFile.html.
-2018-09-17 18:33:29: About to start Parsing File.
-2018-09-17 18:33:29: Read 1043 bytes from data file.
-2018-09-17 18:33:29: Closing Data File.
-2018-09-17 18:33:29: Beginning User Interaction.
-2018-09-17 18:33:29: Printed the User Menu to Terminal.
-2018-09-17 18:33:30: Program Ending. Closing Log File Now. Goodbye.
+2018-09-17 19:32:57: Logfile Opened.
+2018-09-17 19:32:57: Opening Data File with Name: dataFile.html.
+2018-09-17 19:32:57: About to start Parsing File.
+2018-09-17 19:32:57: Read 1118 bytes from data file.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Thornton, Steven, William, Billy.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Brock,Paki,Flynn, Winn.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Oneil,Darrel,Giacomo,Albertson.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Fuller,Blossom,Vielka,Malter.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Reeves,Oscar,Shay,Yalzin.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Mcclure,Camilla,Irene,Yeltsin.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Roman,Giacomo,Amaya,Toyan.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Chandler,Oleg,Taylor,Hassan.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Macdonald,Nola,Aidan, Braiden.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Durham,Malcolm,Hector, Maynor.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
+2018-09-17 19:32:57: About to Try to Parse the Name:   Espinoza,Chadwick,Zia, Alpha.
+2018-09-17 19:32:57: Created Person. About to Print Person Data.
