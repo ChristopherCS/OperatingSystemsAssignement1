@@ -50,7 +50,7 @@ void addPhoneToPerson(char *phoneNumber, person *p){
 }
 
 void printPerson(person *p){
-  char *printString = malloc(512*sizeof(char));
+  char *printString = malloc(256*sizeof(char));
   int phones = 0;
   link *traverser = malloc(sizeof(link));
   traverser = p->phones;
@@ -63,8 +63,11 @@ void printPerson(person *p){
   sprintf(printString, "First Name: %s, Middle Name: %s, Last Name: %s\n", p->first, p->middle, p->last);
   printf(printString);
   traverser = p->phones;
-  for(i; i<phones; i++){
+  for(i; i<=phones; i++){
     printf("\t%s\n", traverser->data);
     traverser = traverser->next;
   }
+
+  free(printString);
+  free(traverser);
 }
