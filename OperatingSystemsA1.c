@@ -7,11 +7,18 @@ int main(int argc, char **argv){
   FILE *dataFP;
   char *fileName = argv[1];
   int result = 1;
+  int nPersons;
+  person **personsArray = createPersonsArray();
 
   initLogfile("Logfile Opened.");
   dataFP = openDataFile(fileName);
-  parseDataFile(dataFP);
 
+  // Parsing the Data File returns the number of people entered.
+  // This value is required during clean up and search.
+  nPersons = parseDataFile(dataFP, personsArray);
+
+
+  cleanUpPersons(personsArray, nPersons);
   closeDataFile(dataFP);
   result = userInteraction();
   appendToLogfile("Program Ending. Closing Log File Now. Goodbye.");
@@ -33,14 +40,13 @@ void closeDataFile(FILE *fp){
   fclose(fp);
 }
 
-void parseDataFile(FILE *dataFile){
+//Returns the number of records created.
+int parseDataFile(FILE *dataFile, person **personsArray){
   char buffer[2048];
   const char delimA[10] = "/"; 
   const char delimB[9] = "\n";
-  const char delimC[2] = ",";
-  const char delimD[3] = "\n";
-  const char arrow = "<";
-  size_t bytesRead;
+  int bytesRead, personsCount = 0;
+  person *temp;
   char  *tokenA;
   char *tokenACounter;
   char *subToken;
@@ -48,6 +54,8 @@ void parseDataFile(FILE *dataFile){
   char *logMessage = calloc(4096, sizeof(char));
   char *buffCopy = calloc(2048, sizeof(char));
   char *tokenACopy = calloc(64, sizeof(char));
+
+
 
   appendToLogfile("About to start Parsing File.");
   // While more bytes have been read from the file. (There is data in the buffer.)
@@ -67,8 +75,8 @@ void parseDataFile(FILE *dataFile){
         while(subToken != NULL){
           switch(checkInputType(subToken)){
             case 0: //a name
-           
-           
+            temp = createPerson(subToken);
+            personsArray[personsCount++] = temp;
             // sprintf(logMessage, "Found a Name in: %s.", subToken);
             // appendToLogfile(logMessage);
             break;
@@ -80,6 +88,7 @@ void parseDataFile(FILE *dataFile){
             break;
 
             case 2: // an open parenthesis, phone number
+              addPhoneToPerson(subToken, personsArray[personsCount-1]);
               
               
               // sprintf(logMessage, "Found a phone number in: %s.", subToken);
@@ -107,6 +116,7 @@ void parseDataFile(FILE *dataFile){
 
   free(buffCopy);
   free(logMessage);
+  return(personsCount);
 }
 
 

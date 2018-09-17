@@ -7,6 +7,7 @@
 #include <time.h>
 #include "persons.h"
 #include "phones.h"
+#include "linkedList.h"
 
 void searchByName();
 void searchByNick();
@@ -19,7 +20,7 @@ void invalidEntry(int);
 void initLogfile(char *message);
 FILE *openDataFile(char *fileName);
 void appendToLogfile(char *message);
-void parseDataFile(FILE *dataFile);
+int parseDataFile(FILE *dataFile, person **personsArray);
 void closeDataFile(FILE* fp);
 int checkInputType(char *inputLine);
 

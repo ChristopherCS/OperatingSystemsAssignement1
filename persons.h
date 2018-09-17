@@ -1,6 +1,7 @@
 #ifndef PERSONS_HEADER
 #define PERSONS_HEADER
 #include "linkedList.h"
+#include "phones.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,5 +23,6 @@ void printPerson(person *p);
 person *searchNamesFirstLast(person **namesArray, int arraySize, char *first, char* last);
 person *searchNamesNick(person **namesArray, int arraySize, char *nick);
 void cleanUpPersons(person **namesArray, int arraySize);
+int compare(char *a, char *b);
 
 #endif

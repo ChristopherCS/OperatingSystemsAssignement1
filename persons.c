@@ -60,7 +60,7 @@ void printPerson(person *p){
   printf(printString);
   traverser = p->phones;
   for(i; i<=phones; i++){
-    printf("\t%s\n", traverser->data);
+    printf("\tPhone: %s\n", traverser->data);
     traverser = traverser->next;
   }
 
@@ -104,14 +104,14 @@ person *searchNamesNick(person **namesArray, int arraySize, char *nick){
   return(ret);
 }
 
-//Returns 1, match or 0, not match
+//Returns 1 for match, or 0 for no match
 int compare(char *a, char *b){
   int ret = 1; // a match
   int sizea, sizeb, i=0;
 
   sizea = sizeof(a);
   sizeb = sizeof(b);
-  if(sizea = sizeb){
+  if(sizea == sizeb){
     for(i; i<sizea; i++){
       if(a[i] != b[i]) ret=0;
     }

@@ -28,7 +28,7 @@ void print_data(link *beginning){
 }
 
 void cleanUpLinks(link * l){
-  link *temp;
+  link *temp = malloc(sizeof(link));
 
   while(l->next != NULL){
     temp = l->next;

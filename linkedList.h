@@ -16,7 +16,7 @@ link *add_link(link *beginning, char *data);
 
 void print_data(link *beginning);
 
-void cleanUpLinks(link *);
+void cleanUpLinks(link *l);
 
 
 #endif

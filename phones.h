@@ -1,6 +1,7 @@
 #ifndef PHONES_HEADER
 #define PHONES_HEADER
 #include "linkedList.h"
+#include "persons.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
