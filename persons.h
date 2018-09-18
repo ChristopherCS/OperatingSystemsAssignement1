@@ -20,10 +20,10 @@ person **createPersonsArray(void);
 person *createPerson(char *names);
 void addPhoneToPerson(char *phoneNumber, person *p);
 void printPerson(person *p);
-person *searchNamesFirstLast(person **namesArray, int arraySize, char *first, char* last);
-person *searchNamesNick(person **namesArray, int arraySize, char *nick);
+void searchNamesFirstLast(person **namesArray, int arraySize, char *first, char* last);
+void searchNamesNick(person **namesArray, int arraySize, char *nick);
 void cleanUpPersons(person **namesArray, int arraySize);
 int compare(char *a, char *b);
 char *cleanString(char *toBeCleaned);
-
+void printAllPersons(person **personsArray, int personsArrayCount);
 #endif

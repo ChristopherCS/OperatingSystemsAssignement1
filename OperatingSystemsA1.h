@@ -9,11 +9,11 @@
 #include "phones.h"
 #include "linkedList.h"
 
-void searchByName();
-void searchByNick();
-void searchByNumber();
+void searchByName(person **personsArray, int arraySize);
+void searchByNick(person **personsArray, int arraySize);
+void searchByNumber(phone **phonesArray, int arraySize);
 int loadUserData(char *fileName);
-int userInteraction(void);
+int userInteraction(person **personsArray, int personsArraySize, phone **phonesArray, int phonesArraySize);
 void menu(void);
 void userSearchMenu(void);
 void invalidEntry(int);

@@ -1,51 +1,46 @@
-2018-09-18 15:06:36: Logfile Opened.
-2018-09-18 15:06:36: Opening Data File with Name: dataFile.html.
-2018-09-18 15:06:36: About to start Parsing File.
-2018-09-18 15:06:36: Read 1118 bytes from data file.
-2018-09-18 15:06:36: About to Try to Parse the Name:   Thornton, Steven, William, Billy.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Brock,Paki,Flynn, Winn.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Oneil,Darrel,Giacomo,Albertson.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Fuller,Blossom,Vielka,Malter.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Reeves,Oscar,Shay,Yalzin.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Mcclure,Camilla,Irene,Yeltsin.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Roman,Giacomo,Amaya,Toyan.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Chandler,Oleg,Taylor,Hassan.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Macdonald,Nola,Aidan, Braiden.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Durham,Malcolm,Hector, Maynor.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: About to Try to Parse the Name:   Espinoza,Chadwick,Zia, Alpha.
-2018-09-18 15:06:36: Created Person. About to Print Person Data.
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Added a phone number to the person:
-2018-09-18 15:06:36: Parsed Data File dataFile.html, added 11 people to the persons Array.
-2018-09-18 15:06:36: Beginning User Interaction.
-2018-09-18 15:06:36: Printed the User Menu to Terminal.
-2018-09-18 15:06:38: Closing Data File.
-2018-09-18 15:06:38: Program Ending. Closing Log File Now. Goodbye.
+2018-09-18 17:13:36: Logfile Opened.
+2018-09-18 17:13:36: Opening Data File with Name: dataFile.html.
+2018-09-18 17:13:36: About to start Parsing File.
+2018-09-18 17:13:36: Read 1118 bytes from data file.
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Added a phone number to the person:
+2018-09-18 17:13:36: Parsed Data File: dataFile.html.
+Added 11 people to the persons Array.
+2018-09-18 17:13:36: Closing Data File.
+2018-09-18 17:13:36: Beginning User Interaction.
+2018-09-18 17:13:36: Printed the User Menu to Terminal.
+2018-09-18 17:13:37: Printed the User Menu to Terminal.
+2018-09-18 17:13:44: Printed the User Search Menu to Terminal.
+2018-09-18 17:13:45: Search By Nick Initiated
+2018-09-18 17:13:48: Searching By Nick for Name: Winn
+
+2018-09-18 17:13:48: Printed the User Menu to Terminal.
+2018-09-18 17:13:52: Printed the User Search Menu to Terminal.
+2018-09-18 17:13:52: Search By Nick Initiated
+2018-09-18 17:13:55: Searching By Nick for Name: Maynor
+
+2018-09-18 17:13:55: Printed the User Menu to Terminal.
+2018-09-18 17:13:58: Printed the User Search Menu to Terminal.
+2018-09-18 17:13:58: Search By Nick Initiated
+2018-09-18 17:14:03: Searching By Nick for Name: Yeltsin
+
+2018-09-18 17:14:03: Printed the User Menu to Terminal.
+2018-09-18 17:14:05: Program Ending. Closing Log File Now. Goodbye.

@@ -7,8 +7,9 @@ int main(int argc, char **argv){
   FILE *dataFP;
   char *fileName = argv[1];
   int result = 1;
-  int nPersons;
+  int nPersons, nPhones = 0;
   person **personsArray = createPersonsArray();
+  phone **phonesArray = createPhonesArray();
   char *logMessage = calloc(sizeof(char), 128);
 
   initLogfile("Logfile Opened.");
@@ -19,10 +20,9 @@ int main(int argc, char **argv){
   nPersons = parseDataFile(dataFP, personsArray);
   sprintf(logMessage, "Parsed Data File: %s.\nAdded %d people to the persons Array.", fileName, nPersons);
   appendToLogfile(logMessage);
-
-  result = userInteraction();
-  //cleanUpPersons(personsArray, nPersons);
   closeDataFile(dataFP);
+  result = userInteraction(personsArray, nPersons, phonesArray, nPhones);
+  //cleanUpPersons(personsArray, nPersons);
   appendToLogfile("Program Ending. Closing Log File Now. Goodbye.");
   free(logMessage);
   return result;
@@ -78,11 +78,11 @@ int parseDataFile(FILE *dataFile, person **personsArray){
         while(subToken != NULL){
           switch(checkInputType(subToken)){
             case 0: //a name
-            sprintf(logMessage, "About to Try to Parse the Name: %s.", subToken);
-            appendToLogfile(logMessage);
+            //sprintf(logMessage, "About to Try to Parse the Name: %s.", subToken);
+            //appendToLogfile(logMessage);
             temp = createPerson(subToken);
-            appendToLogfile("Created Person. About to Print Person Data.");
-            printPerson(temp);
+            //appendToLogfile("Created Person. About to Print Person Data.");
+            //printPerson(temp);
             personsArray[personsCount++] = temp;
             
             break;
@@ -95,7 +95,7 @@ int parseDataFile(FILE *dataFile, person **personsArray){
 
             case 2: // an open parenthesis, phone number
               addPhoneToPerson(subToken, personsArray[personsCount-1]);
-              printPerson(personsArray[personsCount-1]);
+              //printPerson(personsArray[personsCount-1]);
               appendToLogfile("Added a phone number to the person:");
               
               // sprintf(logMessage, "Found a phone number in: %s.", subToken);
@@ -178,18 +178,41 @@ void appendToLogfile(char *message){
 }
 
 
-void searchByName(){
+void searchByName(person **personsArray, int arraySize){
+  char *searchLast = calloc(sizeof(char), 128);
+  char *searchFirst = calloc(sizeof(char), 128);
+  char *logMessage = calloc(sizeof(char), 128);
   appendToLogfile("Search By Name Initiated");
-  printf("searchByName: Not Implemented Yet\n");
+  printf("First Enter the Last Name you want to search for, then press enter.");
+  scanf("%s", searchLast);
+  printf("Now enter the First Name you want to search for, then press enter.");
+  scanf("%s", searchFirst);
+
+  sprintf(logMessage, "Performing a Last, First search for: %s, %s", searchLast, searchFirst);
+  appendToLogfile(logMessage);
+  searchNamesFirstLast(personsArray, arraySize, searchFirst, searchLast);
+
+  free(logMessage);
+  free(searchLast);
+  free(searchFirst);
 }
 
 
-void searchByNick(){
+void searchByNick(person **personsArray, int arraySize){
+  char *searchName = calloc(sizeof(char), 128);
+  char *logMessage = calloc(sizeof(char), 128);
   appendToLogfile("Search By Nick Initiated");
-  printf("searchByNick: Not Implemented Yet\n");
+  printf("Enter the Nick Name of the person you are searching for, then press enter."); 
+  scanf("%s", searchName);
+  sprintf(logMessage, "Searching By Nick for Name: %s\n", searchName);
+  appendToLogfile(logMessage);
+  searchNamesNick(personsArray, arraySize, searchName);
+
+  free(logMessage);
+  free(searchName);
 }
 
-void searchByNumber(){
+void searchByNumber(phone **phonesArray, int arraySize){
   appendToLogfile("Search by Number Initiated");
   printf("SearchByNumber: Not Implemented Yet\n");
 }
@@ -200,12 +223,12 @@ int loadUserData(char *fileName){
   return(0);
 }
 
-int userInteraction(void){
+int userInteraction(person** personsArray, int personsArraySize, phone** phonesArray, int phonesArraySize){
   appendToLogfile("Beginning User Interaction.");
   int loop = 0;
   int getby = 0;
 
-  while(loop != 3){
+  while(loop != 4){
     menu();
     scanf("%d", &loop);
     if(loop == 1){
@@ -213,8 +236,8 @@ int userInteraction(void){
         userSearchMenu();
         scanf("%d", &getby);
 
-        if(getby == 1) searchByName();
-        if(getby == 2) searchByNick();        
+        if(getby == 1) searchByName(personsArray, personsArraySize);
+        if(getby == 2) searchByNick(personsArray, personsArraySize);        
        
         if(getby != 1 && getby != 2) invalidEntry(getby);
     
@@ -223,10 +246,13 @@ int userInteraction(void){
     }
 
     else if(loop == 2){
-      searchByNumber();
+      searchByNumber(phonesArray, phonesArraySize);
     }
 
-    else if(loop != 3){
+    else if(loop == 3){
+      printAllPersons(personsArray, personsArraySize);
+    }
+    else if(loop != 4){
       invalidEntry(loop);
     }
 
@@ -240,7 +266,9 @@ void menu(void){
   appendToLogfile("Printed the User Menu to Terminal.");
   printf("Enter \"1\" to search by name.\n");
   printf("Enter \"2\" to search by number.\n");
-  printf("Enter \"3\" to quit.\n");
+  printf("Enter \"3\" to print all people in the system.\n");
+  printf("Enter \"4\" to quit.\n");
+  
 }
 
 void userSearchMenu(void){

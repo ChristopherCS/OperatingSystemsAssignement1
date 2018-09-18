@@ -16,36 +16,36 @@ person *createPerson(char *names){
   char *savePtr;
   char *token; 
   int i = 0;
-  printf("Here is the originial names passed: %s\n", names);
+  //printf("Here is the originial names passed: %s\n", names);
   
   strncpy(duplicate, names, 200);
-  printf("Here is the duplicate: %s\n", duplicate); 
+  //printf("Here is the duplicate: %s\n", duplicate); 
 
   token = strtok_r(duplicate, ",", &savePtr);
   for(i; i<4; i++){
     switch(i){
       case 0:
-        token = cleanString(token);
-        printf("Last Name: %s\n", token);
-        strcpy(p->last, token);
+        
+        //printf("Last Name: %s\n", token);
+        strcpy(p->last, cleanString(token));
         token = strtok_r(NULL, ",", &savePtr);
         break;
       case 1:
-        token = cleanString(token);
-        printf("Middle Name: %s\n", token);
-        strcpy(p->middle, token);
+        
+        //printf("Middle Name: %s\n", token);
+        strcpy(p->middle, cleanString(token));
         token = strtok_r(NULL, ",", &savePtr);
         break;
       case 2:
-        token = cleanString(token);
-        strcpy(p->first, token);
-        printf("First Name: %s\n", token);
+        
+        strcpy(p->first, cleanString(token));
+       // printf("First Name: %s\n", token);
         token = strtok_r(NULL, ",", &savePtr);
         break;
       case 3:
-        token = cleanString(token);
-        printf("Nick name: %s\n", token);
-        strcpy(p->nick, token);
+        
+       // printf("Nick name: %s\n", token);
+        strcpy(p->nick, cleanString(token));
         token = strtok_r(NULL, ",", &savePtr);
         break;
     }
@@ -74,8 +74,8 @@ void printPerson(person *p){
     phones++;
     traverser = traverser->next;
   }
-
-  sprintf(printString, "First Name: %s, Middle Name: %s, Last Name: %s\n", p->first, p->middle, p->last);
+  
+  sprintf(printString, "First Name: %s, Middle Name: %s, Last Name: %s, Nick: %s \n", p->first, p->middle,p->last,p->nick );
   printf(printString);
   traverser = p->phones;
   for(i; i<=phones && traverser !=NULL; i++){
@@ -87,54 +87,68 @@ void printPerson(person *p){
   free(traverser);
 }
 
-person *searchNamesFirstLast(person **namesArray, int arraySize, char *first, char* last){
+void searchNamesFirstLast(person **namesArray, int arraySize, char *first, char* last){
   person * p = NULL;
-  person *ret = NULL;
+  person *match = NULL;
   int found = 0;
   int i = 0;
+  int firstsMatch;
+  int lastsMatch;
   for(i; i<arraySize && !found; i++){
     p = namesArray[i];
-    if(compare(p->first, first)){
-      if(compare(p->last, last)){
-        ret = p;
-        found = 1;
-      }
+    
+    firstsMatch = compare(first, p->first);
+    if(firstsMatch){
+      found = 1;
+      match = p;
     }
-
+    lastsMatch = compare(last, p->last);
+    if(lastsMatch){
+      found = 1;
+      match = p;
+    }
   }
-  return(ret);
+  if(found){
+    printf("Found %s, %s\n\n", last, first);
+    printPerson(match);
+  }else{
+    printf("Unable to find %s, %s. \n\n", last, first);
+  }
 
 }
 
-person *searchNamesNick(person **namesArray, int arraySize, char *nick){
+void searchNamesNick(person **namesArray, int arraySize, char *nick){
   person *p = NULL;
-  person *ret = NULL;
   int i = 0;
   int found = 0;
 
   for(i; i<arraySize && !found; i++){
     p = namesArray[i];
     if(compare(p->nick, nick)){
-      ret = p;
       found = 1;
     }
   }
 
-  return(ret);
+  if(found){
+    printPerson(p);
+  }else{
+    printf("Sorry, no record for \"%s\" found.\n", nick);
+  }
+
+
 }
 
 //Returns 1 for match, or 0 for no match
 int compare(char *a, char *b){
   int ret = 1; // a match
-  int sizea, sizeb, i=0;
+  int sizea, i=0;
 
   sizea = sizeof(a);
-  sizeb = sizeof(b);
-  if(sizea == sizeb){
-    for(i; i<sizea; i++){
-      if(a[i] != b[i]) ret=0;
-    }
-  }else ret = 0; //not a match
+
+  for(i; i<sizea; i++){
+    if(a[i] != b[i]) ret=0;
+  }
+  
 
   return(ret);
 }
@@ -155,16 +169,21 @@ void cleanUpPersons(person **namesArray, int arraySize){
 }
 
 char *cleanString(char *toBeCleaned){
-  int count = strlen(toBeCleaned);
-  char *clean = calloc(sizeof(char),count+1);
-  int i,j=0;
-
-  for(i=0; i<count; i++){
-    if(toBeCleaned[i] == " " || toBeCleaned == "\n" || toBeCleaned == "\t" || toBeCleaned == "\r"){
-
-    }else{
-      clean[j++] = toBeCleaned[i];
+  char *clean = calloc(sizeof(char), strlen(toBeCleaned)+1);
+  int i = 0, j=0;
+  for(i; i<strlen(toBeCleaned); i++){
+    clean[j]=toBeCleaned[i];
+    if(!isspace(clean[j])){
+      j++;
     }
   }
+
   return(clean);
+}
+
+void printAllPersons(person **personsArray, int personsArraySize){
+  int i= 0;
+  for( i; i<personsArraySize; i++){
+    printPerson(personsArray[i]);
+  }
 }
