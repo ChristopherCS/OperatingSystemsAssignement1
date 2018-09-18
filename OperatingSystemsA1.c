@@ -9,6 +9,7 @@ int main(int argc, char **argv){
   int result = 1;
   int nPersons;
   person **personsArray = createPersonsArray();
+  char *logMessage = calloc(sizeof(char), 128);
 
   initLogfile("Logfile Opened.");
   dataFP = openDataFile(fileName);
@@ -16,12 +17,14 @@ int main(int argc, char **argv){
   // Parsing the Data File returns the number of people entered.
   // This value is required during clean up and search.
   nPersons = parseDataFile(dataFP, personsArray);
+  sprintf(logMessage, "Parsed Data File: %s.\nAdded %d people to the persons Array.", fileName, nPersons);
+  appendToLogfile(logMessage);
 
-
-  cleanUpPersons(personsArray, nPersons);
-  closeDataFile(dataFP);
   result = userInteraction();
+  //cleanUpPersons(personsArray, nPersons);
+  closeDataFile(dataFP);
   appendToLogfile("Program Ending. Closing Log File Now. Goodbye.");
+  free(logMessage);
   return result;
 }
 
@@ -92,7 +95,8 @@ int parseDataFile(FILE *dataFile, person **personsArray){
 
             case 2: // an open parenthesis, phone number
               addPhoneToPerson(subToken, personsArray[personsCount-1]);
-              
+              printPerson(personsArray[personsCount-1]);
+              appendToLogfile("Added a phone number to the person:");
               
               // sprintf(logMessage, "Found a phone number in: %s.", subToken);
               // appendToLogfile(logMessage);
@@ -117,8 +121,8 @@ int parseDataFile(FILE *dataFile, person **personsArray){
 
 
 
-  free(buffCopy);
-  free(logMessage);
+  // free(buffCopy);
+  // free(logMessage);
   return(personsCount);
 }
 

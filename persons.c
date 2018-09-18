@@ -25,21 +25,25 @@ person *createPerson(char *names){
   for(i; i<4; i++){
     switch(i){
       case 0:
+        token = cleanString(token);
         printf("Last Name: %s\n", token);
         strcpy(p->last, token);
         token = strtok_r(NULL, ",", &savePtr);
         break;
       case 1:
+        token = cleanString(token);
         printf("Middle Name: %s\n", token);
         strcpy(p->middle, token);
         token = strtok_r(NULL, ",", &savePtr);
         break;
       case 2:
+        token = cleanString(token);
         strcpy(p->first, token);
         printf("First Name: %s\n", token);
         token = strtok_r(NULL, ",", &savePtr);
         break;
       case 3:
+        token = cleanString(token);
         printf("Nick name: %s\n", token);
         strcpy(p->nick, token);
         token = strtok_r(NULL, ",", &savePtr);
@@ -53,6 +57,7 @@ person *createPerson(char *names){
 
 void addPhoneToPerson(char *phoneNumber, person *p){
   link *new = malloc(sizeof(link));
+  phoneNumber = cleanString(phoneNumber);
   new->data = phoneNumber;
   new->next = p->phones;
   p->phones = new;
@@ -147,4 +152,19 @@ void cleanUpPersons(person **namesArray, int arraySize){
     free(p);
   }
   free(namesArray);
+}
+
+char *cleanString(char *toBeCleaned){
+  int count = strlen(toBeCleaned);
+  char *clean = calloc(sizeof(char),count+1);
+  int i,j=0;
+
+  for(i=0; i<count; i++){
+    if(toBeCleaned[i] == " " || toBeCleaned == "\n" || toBeCleaned == "\t" || toBeCleaned == "\r"){
+
+    }else{
+      clean[j++] = toBeCleaned[i];
+    }
+  }
+  return(clean);
 }

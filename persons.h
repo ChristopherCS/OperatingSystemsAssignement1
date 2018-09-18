@@ -24,5 +24,6 @@ person *searchNamesFirstLast(person **namesArray, int arraySize, char *first, ch
 person *searchNamesNick(person **namesArray, int arraySize, char *nick);
 void cleanUpPersons(person **namesArray, int arraySize);
 int compare(char *a, char *b);
+char *cleanString(char *toBeCleaned);
 
 #endif
