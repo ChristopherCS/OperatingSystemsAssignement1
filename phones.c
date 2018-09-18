@@ -78,7 +78,7 @@ int searchPhone(phone **phonesArray, int phonesArrayCount, char *phoneNumber){
   char *valA, *valB;
   int i=0, match=0, ret = -1;
   valB = cleanPhone(phoneNumber);
-  printf("Searching by Number for: %s,\n(which has been cleaned to: %s).\n", phoneNumber, valB);
+ // printf("Searching by Number for: %s,\n(which has been cleaned to: %s).\n", phoneNumber, valB);
   
 
   for(i; i<phonesArrayCount && !match; i++){
