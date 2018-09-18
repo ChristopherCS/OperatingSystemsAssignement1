@@ -26,4 +26,5 @@ void cleanUpPersons(person **namesArray, int arraySize);
 int compare(char *a, char *b);
 char *cleanString(char *toBeCleaned);
 void printAllPersons(person **personsArray, int personsArrayCount);
+
 #endif

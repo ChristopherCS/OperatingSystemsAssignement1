@@ -1,46 +1,83 @@
-2018-09-18 17:13:36: Logfile Opened.
-2018-09-18 17:13:36: Opening Data File with Name: dataFile.html.
-2018-09-18 17:13:36: About to start Parsing File.
-2018-09-18 17:13:36: Read 1118 bytes from data file.
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Added a phone number to the person:
-2018-09-18 17:13:36: Parsed Data File: dataFile.html.
+2018-09-18 18:50:30: Logfile Opened.
+2018-09-18 18:50:30: Opening Data File with Name: dataFile.html.
+2018-09-18 18:50:30: About to start Parsing File.
+2018-09-18 18:50:30: Read 1118 bytes from data file.
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Added a phone number to the person:
+2018-09-18 18:50:30: Parsed Data File: dataFile.html.
 Added 11 people to the persons Array.
-2018-09-18 17:13:36: Closing Data File.
-2018-09-18 17:13:36: Beginning User Interaction.
-2018-09-18 17:13:36: Printed the User Menu to Terminal.
-2018-09-18 17:13:37: Printed the User Menu to Terminal.
-2018-09-18 17:13:44: Printed the User Search Menu to Terminal.
-2018-09-18 17:13:45: Search By Nick Initiated
-2018-09-18 17:13:48: Searching By Nick for Name: Winn
+2018-09-18 18:50:30: Closing Data File.
+2018-09-18 18:50:30: Beginning to Populate the Phones Array.
+2018-09-18 18:50:30: Adding Phone Number: (313)355-8394,Home,true, for name: Thornton, William.
 
-2018-09-18 17:13:48: Printed the User Menu to Terminal.
-2018-09-18 17:13:52: Printed the User Search Menu to Terminal.
-2018-09-18 17:13:52: Search By Nick Initiated
-2018-09-18 17:13:55: Searching By Nick for Name: Maynor
+2018-09-18 18:50:30: Adding Phone Number: (999)999-9999,Mobile,false, for name: Thornton, William.
 
-2018-09-18 17:13:55: Printed the User Menu to Terminal.
-2018-09-18 17:13:58: Printed the User Search Menu to Terminal.
-2018-09-18 17:13:58: Search By Nick Initiated
-2018-09-18 17:14:03: Searching By Nick for Name: Yeltsin
+2018-09-18 18:50:30: Adding Phone Number: (278)938-2077,Mobile,true, for name: Brock, Flynn.
 
-2018-09-18 17:14:03: Printed the User Menu to Terminal.
-2018-09-18 17:14:05: Program Ending. Closing Log File Now. Goodbye.
+2018-09-18 18:50:30: Adding Phone Number: (485)565-1798,Home,true, for name: Oneil, Giacomo.
+
+2018-09-18 18:50:30: Adding Phone Number: (952)397-9958,Work,false, for name: Fuller, Vielka.
+
+2018-09-18 18:50:30: Adding Phone Number: (319)922-3587,Mobile,true, for name: Fuller, Vielka.
+
+2018-09-18 18:50:30: Adding Phone Number: (384)268-7417,Mobile,false, for name: Fuller, Vielka.
+
+2018-09-18 18:50:30: Adding Phone Number: (102)760-8690,Work,false, for name: Reeves, Shay.
+
+2018-09-18 18:50:30: Adding Phone Number: (211)968-0740,Mobile,true, for name: Reeves, Shay.
+
+2018-09-18 18:50:30: Adding Phone Number: (803)698-8649,Work,false, for name: Mcclure, Irene.
+
+2018-09-18 18:50:30: Adding Phone Number: (487)207-1822,Home,true, for name: Mcclure, Irene.
+
+2018-09-18 18:50:30: Adding Phone Number: (713)190-0482,Work,true, for name: Roman, Amaya.
+
+2018-09-18 18:50:30: Adding Phone Number: (993)608-9050,Mobile,true, for name: Chandler, Taylor.
+
+2018-09-18 18:50:30: Adding Phone Number: (643)372-9164,Mobile,false, for name: Chandler, Taylor.
+
+2018-09-18 18:50:30: Adding Phone Number: (214)651-8307,Home,true, for name: Macdonald, Aidan.
+
+2018-09-18 18:50:30: Adding Phone Number: (982)218-5215,Home,false, for name: Durham, Hector.
+
+2018-09-18 18:50:30: Adding Phone Number: (641)769-7691,Home,true, for name: Durham, Hector.
+
+2018-09-18 18:50:30: Adding Phone Number: (257)164-8364,Mobile,false, for name: Durham, Hector.
+
+2018-09-18 18:50:30: Adding Phone Number: (582)841-0437,Work,true, for name: Espinoza, Zia.
+
+2018-09-18 18:50:30: Adding Phone Number: (390)896-8859,Work,false, for name: Espinoza, Zia.
+
+2018-09-18 18:50:30: Added 20 phone numbers to the phones array.
+2018-09-18 18:50:30: Beginning User Interaction.
+2018-09-18 18:50:30: Printed the User Menu to Terminal.
+2018-09-18 18:50:36: Printed the User Menu to Terminal.
+2018-09-18 18:50:40: Search by Number Initiated
+2018-09-18 18:50:57: Printed the User Menu to Terminal.
+2018-09-18 18:51:09: Search by Number Initiated
+2018-09-18 18:51:27: Printed the User Menu to Terminal.
+2018-09-18 18:51:27: User entered an invalid entry.
+2018-09-18 18:51:27: Printed the User Menu to Terminal.
+2018-09-18 18:51:27: User entered an invalid entry.
+2018-09-18 18:51:27: Printed the User Menu to Terminal.
+2018-09-18 18:51:36: Search by Number Initiated
+2018-09-18 18:51:52: Printed the User Menu to Terminal.
+2018-09-18 18:52:10: Program Ending. Closing Log File Now. Goodbye.

@@ -23,5 +23,6 @@ void appendToLogfile(char *message);
 int parseDataFile(FILE *dataFile, person **personsArray);
 void closeDataFile(FILE* fp);
 int checkInputType(char *inputLine);
+int populatePhonesArray(person **personsArray, int personsArrayCount, phone **phonesArray);
 
 #endif

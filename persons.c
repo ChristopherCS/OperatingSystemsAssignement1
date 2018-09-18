@@ -97,12 +97,12 @@ void searchNamesFirstLast(person **namesArray, int arraySize, char *first, char*
   for(i; i<arraySize && !found; i++){
     p = namesArray[i];
     
-    firstsMatch = compare(first, p->first);
+    firstsMatch = personCompare(first, p->first);
     if(firstsMatch){
       found = 1;
       match = p;
     }
-    lastsMatch = compare(last, p->last);
+    lastsMatch = personCompare(last, p->last);
     if(lastsMatch){
       found = 1;
       match = p;
@@ -124,7 +124,7 @@ void searchNamesNick(person **namesArray, int arraySize, char *nick){
 
   for(i; i<arraySize && !found; i++){
     p = namesArray[i];
-    if(compare(p->nick, nick)){
+    if(personCompare(p->nick, nick)){
       found = 1;
     }
   }
@@ -139,7 +139,7 @@ void searchNamesNick(person **namesArray, int arraySize, char *nick){
 }
 
 //Returns 1 for match, or 0 for no match
-int compare(char *a, char *b){
+int personCompare(char *a, char *b){
   int ret = 1; // a match
   int sizea, i=0;
 

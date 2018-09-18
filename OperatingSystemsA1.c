@@ -21,11 +21,41 @@ int main(int argc, char **argv){
   sprintf(logMessage, "Parsed Data File: %s.\nAdded %d people to the persons Array.", fileName, nPersons);
   appendToLogfile(logMessage);
   closeDataFile(dataFP);
+  nPhones = populatePhonesArray(personsArray, nPersons, phonesArray);
+
   result = userInteraction(personsArray, nPersons, phonesArray, nPhones);
   //cleanUpPersons(personsArray, nPersons);
   appendToLogfile("Program Ending. Closing Log File Now. Goodbye.");
   free(logMessage);
   return result;
+}
+
+int populatePhonesArray(person **personsArray, int personsArrayCount, phone **phonesArray){
+  int i = 0, phonesArrayCount = 0;
+  char *personsName = calloc(sizeof(char), 64);
+  char *nextNumber = calloc(sizeof(char), 64);
+  char *logMessage = calloc(sizeof(char), 64);
+  link *traverser = malloc(sizeof(link));
+
+  appendToLogfile("Beginning to Populate the Phones Array.");
+  for(i; i<personsArrayCount; i++){
+    sprintf(personsName, "%s, %s", personsArray[i]->last, personsArray[i]->first);
+    traverser = personsArray[i]->phones;
+    while(traverser != NULL){
+      sprintf(logMessage, "Adding Phone Number: %s, for name: %s.\n", traverser->data, personsName );
+      appendToLogfile(logMessage);
+      phonesArrayCount = addPhoneToArray(phonesArray, phonesArrayCount, traverser->data, personsName);
+      traverser = traverser->next;
+    }
+  }
+
+  sprintf(logMessage, "Added %d phone numbers to the phones array.", phonesArrayCount);
+  appendToLogfile(logMessage);
+  // free(personsName);
+  // free(traverser);
+  // free(nextNumber);
+  // free(logMessage);
+  return(phonesArrayCount);
 }
 
 FILE *openDataFile(char *fileName){
@@ -213,8 +243,12 @@ void searchByNick(person **personsArray, int arraySize){
 }
 
 void searchByNumber(phone **phonesArray, int arraySize){
+  char *searchString = calloc(sizeof(char),64);
   appendToLogfile("Search by Number Initiated");
-  printf("SearchByNumber: Not Implemented Yet\n");
+  printf("Enter the phone number you are searching for, then press enter.");
+  scanf("%s", searchString);
+  searchPhone(phonesArray, arraySize, searchString);
+  free(searchString);
 }
 
 int loadUserData(char *fileName){
@@ -228,7 +262,7 @@ int userInteraction(person** personsArray, int personsArraySize, phone** phonesA
   int loop = 0;
   int getby = 0;
 
-  while(loop != 4){
+  while(loop != 5){
     menu();
     scanf("%d", &loop);
     if(loop == 1){
@@ -252,7 +286,10 @@ int userInteraction(person** personsArray, int personsArraySize, phone** phonesA
     else if(loop == 3){
       printAllPersons(personsArray, personsArraySize);
     }
-    else if(loop != 4){
+    else if(loop == 4){
+      printPhonesArray(phonesArray, phonesArraySize);
+    }
+    else if(loop != 5){
       invalidEntry(loop);
     }
 
@@ -266,8 +303,9 @@ void menu(void){
   appendToLogfile("Printed the User Menu to Terminal.");
   printf("Enter \"1\" to search by name.\n");
   printf("Enter \"2\" to search by number.\n");
-  printf("Enter \"3\" to print all people in the system.\n");
-  printf("Enter \"4\" to quit.\n");
+  printf("Enter \"3\" to print all people in the People Array.\n");
+  printf("Enter \"4\" to print all phones in the Phone Array.\n");
+  printf("Enter \"5\" to quit.\n");
   
 }
 
